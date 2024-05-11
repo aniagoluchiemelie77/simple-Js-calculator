@@ -23,16 +23,13 @@ let p14 = document.querySelector('.section__div14');
 let p20 = document.querySelector('.section__div20');
 let sidebar = document.querySelector('.sectionsidebar');
 let sideBarSvg2 = document.querySelector('.sectionsidebar__div');
-let child1 = sideBarSvg2.querySelector('.svg2');
-let child2 = sideBarDiv1.querySelector('.sectionsidebar__div1-p');
-let child3 = sideBarDiv2.querySelector('.sectionsidebar__div2-p');
-let child4 = sideBarDiv3.querySelector('.sectionsidebar__div3-p');
-let child5 = sideBarDiv4.querySelector('.sectionsidebar__div4-p');
+
 let sideBarSvg1 = document.querySelector('.sectionsidebar__span');
 let sideBarDiv1 = document.querySelector('.sectionsidebar__div1');
 let sideBarDiv2 = document.querySelector('.sectionsidebar__div2');
 let sideBarDiv3 = document.querySelector('.sectionsidebar__div3');
 let sideBarDiv4 = document.querySelector('.sectionsidebar__div4');
+let newParagraphColor = document.getElementsByTagName('p');
 
 
 const arr = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p16, p17, p18];
@@ -43,12 +40,12 @@ const test = function (arr) {
     let newClicks;
     arr.forEach(function (curVal, index){
         const clickEvent = function () {
+            newParagraphColor.classList.add("sidebar__svg1-display");
             let newOutput;
             let newValue = curVal.textContent;
             newOutput = ` ${newValue} `;
             input1.innerHTML += newOutput;
             //numberOfClicks.push(output);
-
         } 
         curVal.addEventListener('click', clickEvent);
     })
@@ -69,12 +66,16 @@ const cleanOutput = function () {
 }
 p20.addEventListener('click', cleanOutput);
 
+
+
 const stretchSideBar = function () {
-    sidebar.classList.add("sidebar-stretch");
-    sideBarSvg2.className = "sidebar__svg1-display";
-    sideBarSvg1.className = "sidebar__svg1-hide";
-    sideBarDiv2.className = "sidebar__svg1-display";
-    sideBarDiv3.className = "sidebar__svg1-display";
-    sideBarDiv1.className = "sidebar__svg1-display";
+   sidebar.classList.toggle("sidebar-stretch");
+
+    sideBarSvg2.classList.add("sidebar__svg1-display");
+    sideBarDiv1.classList.add("sidebar__cos");
+    sideBarDiv2.classList.add("sidebar__sin");
+    sideBarDiv3.classList.add("sidebar__tan");
+    sideBarDiv4.classList.add("sidebar__percent");
+    sideBarSvg1.classList.add("sidebar__svg1-hide");
 }
 sidebar.addEventListener('click', stretchSideBar);
