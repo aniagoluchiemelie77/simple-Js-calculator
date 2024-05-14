@@ -29,37 +29,35 @@ let sideBarDiv1 = document.querySelector('.sectionsidebar__div1');
 let sideBarDiv2 = document.querySelector('.sectionsidebar__div2');
 let sideBarDiv3 = document.querySelector('.sectionsidebar__div3');
 let sideBarDiv4 = document.querySelector('.sectionsidebar__div4');
-let newParagraphColor = document.getElementsByTagName('p');
+let sideBarStretchDiv5 = document.querySelector('.sectionsidebar__div5');
 
-
+//Arranging elements in array for looping
 const arr = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p16, p17, p18];
+const arr2 = [sideBarDiv1, sideBarDiv2, sideBarDiv3, sideBarDiv4, sideBarStretchDiv5];
 
 const test = function (arr) {
-    let numberOfClicks = [];
-    let output;
-    let newClicks;
-    arr.forEach(function (curVal, index){
+    arr.forEach(function (curVal, index) {
         const clickEvent = function () {
-            newParagraphColor.classList.add("sidebar__svg1-display");
             let newOutput;
             let newValue = curVal.textContent;
             newOutput = ` ${newValue} `;
             input1.innerHTML += newOutput;
-            //numberOfClicks.push(output);
         } 
         curVal.addEventListener('click', clickEvent);
     })
-    output = input1.innerHTML;
-     
-    const evaluate = function(){
-        let output2;
-        input1.innerHTML = output2;
-        console.log(newClicks);
-    }
-    p14.addEventListener('click', evaluate)
 };
 test(arr);
 
+//For calculation 
+/*const evaluate = function(){
+    let output2;
+    input1.innerHTML = output2;
+    console.log(output);
+}
+p14.addEventListener('click', evaluate);
+evaluate();*/
+
+//For del event
 const cleanOutput = function () {
     let text = " ";
     input1.innerHTML = text;
@@ -67,15 +65,32 @@ const cleanOutput = function () {
 p20.addEventListener('click', cleanOutput);
 
 
+//For sidebar stretch event
+const stretchSideBar = function (e) {
+    sidebar.classList.toggle("sidebar-stretch");
+    sideBarSvg2.classList.toggle("sectionsidebar__div-initial");
+    sideBarDiv1.classList.toggle("sectionsidebar__div-initial");
+    sideBarDiv2.classList.toggle("sectionsidebar__div-initial");
+    sideBarDiv3.classList.toggle("sectionsidebar__div-initial");
+    sideBarDiv4.classList.toggle("sectionsidebar__div-initial");
+    sideBarStretchDiv5.classList.toggle("sectionsidebar__div-initial");
+    sideBarSvg1.classList.toggle("sidebar__svg1-hide");
 
-const stretchSideBar = function () {
-   sidebar.classList.toggle("sidebar-stretch");
-
-    sideBarSvg2.classList.add("sidebar__svg1-display");
-    sideBarDiv1.classList.add("sidebar__cos");
-    sideBarDiv2.classList.add("sidebar__sin");
-    sideBarDiv3.classList.add("sidebar__tan");
-    sideBarDiv4.classList.add("sidebar__percent");
-    sideBarSvg1.classList.add("sidebar__svg1-hide");
+    const test = function (arr) {
+        let output;
+        arr.forEach(function (curVal) {
+            const clickEvent = function (e) {
+                e.stopPropagation();
+                let newOutput;
+                let newValue = curVal.textContent;
+                newOutput = ` ${newValue} `;
+                input1.innerHTML += newOutput;
+            } 
+            curVal.addEventListener('click', clickEvent);
+        })
+    };
+    test(arr2);
+    e.stopPropagation();
 }
 sidebar.addEventListener('click', stretchSideBar);
+
