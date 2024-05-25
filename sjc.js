@@ -29,6 +29,8 @@ let sideBarDiv1 = document.querySelector('.sectionsidebar__div1');
 let sideBarDiv2 = document.querySelector('.sectionsidebar__div2');
 let sideBarDiv3 = document.querySelector('.sectionsidebar__div3');
 let sideBarDiv4 = document.querySelector('.sectionsidebar__div4');
+const shiftKey = document.querySelector('.section__div15-p');
+const shiftElement = document.querySelectorAll('.paragraph-green');
 let sideBarStretchDiv5 = document.querySelector('.sectionsidebar__div5');
 
 //Arranging elements in array for looping
@@ -94,3 +96,10 @@ const stretchSideBar = function (e) {
 }
 sidebar.addEventListener('click', stretchSideBar);
 
+//for shift key
+const shiftFunc = function (e){
+    e.stopPropagation();
+    shiftKey.classList.replace('section__p', 'p-yellow__shift');
+    shiftElement.classList.replace('shift__element', 'p-yellow');
+};
+shiftKey.addEventListener('click', shiftFunc);
