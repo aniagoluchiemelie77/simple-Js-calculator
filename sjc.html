@@ -10,105 +10,33 @@
     <title>Simple Javascript calculator</title>
 </head>
 <body>
-    <section class="section">
-        <div class="section__div1" id=" sec__div">
-            <p class="section__div1-p section__p">9</p>
-        </div>
-        <div class="section__div2" id=" sec__div">
-            <p class="section__div2-p section__p">8</p>
-        </div>
-        <div class="section__div3" id=" sec__div">
-            <p class="section__div3-p section__p">7</p>
-        </div>
-        <div class="section__div4" id=" sec__div">
-            <p class="section__div4-p section__p">6</p>
-        </div>
-        <div class="section__div5" id=" sec__div">
-            <p class="section__div5-p section__p">5</p>
-        </div>
-        <div class="section__div6" id=" sec__div">
-            <p class="section__div6-p section__p">4</p>
-        </div>
-        <div class="section__div7" id=" sec__div">
-            <p class="section__div7-p section__p">3</p>
-        </div>
-        <div class="section__div8" id=" sec__div">
-            <p class="section__div8-p section__p">2</p>
-        </div>
-        <div class="section__div9" id=" sec__div">
-            <p class="section__div9-p section__p">1</p>
-        </div>
-        <div class="section__div10" id=" sec__div">
-            <p class="shift__element paragraph-green">&#8730;</p>
-            <p class="section__div10-p section__p">0</p>
-        </div>
-        <div class="section__div11" id=" sec__div">
-            <p class="shift__element paragraph-green"><sup>3</sup>&#8730;</p>
-            <p class="section__div11-p section__p">.</p>
-        </div>
-        <div class="section__div12" id=" sec__div">
-            <p class="shift__element paragraph-green">e<sup>x</sup></p>
-            <p class="section__div12-p section__p">00</p>
-        </div>
-        <div class="section__div13" id=" sec__div">
-            <p class="shift__element paragraph-green">&#33;</p>
-            <p class="section__div13-p section__p">+</p>
-        </div>
-        <div class="section__div14" id=" sec__div">
-            <p class="shift__element paragraph-green">
-                log(
-            </p>
-            <p class="section__div14-p section__p"> = </p>
-        </div>
-        <div class="section__div15">
-            <p class="section__div15-p section__p">Shift</p>
-        </div>
-        <div class="section__div16" id=" sec__div">
-            <p class="section__div16-p section__p">/</p>
-        </div>
-        <div class="section__div17" id=" sec__div">
-            <p class="shift__element paragraph-green">In(</p>
-            <p class="section__div17-p section__p">*</p>
-        </div>
-        <div class="section__div18" id=" sec__div">
-            <p class="section__div18-p section__p">-</p>
-        </div>
-        <span class="section__div19">
-            <p class="section__div19-p" id="fname"></p>
-        </span>
-        <div class="section__div20">
-            <p class='section__div20-p section__p'>Del</p></div>
-        <div class="sectionsidebar">
-            <span class = "sectionsidebar__span">
-                <svg width="4rem" height="4rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" fill="none"/>
-                    <path d="M14.5 17L9.5 12L14.5 7" stroke="#FAFAFA" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-            </span>
-            <div class="sectionsidebar__div sectionsidebar__div-initial">
-                <svg class = "svg2" width="4rem" height="4rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" fill="#0F0000"/>
-                    <path d="M9.5 7L14.5 12L9.5 17" stroke="#FAFAFA" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="sectionsidebar__div1 sectionsidebar__div-initial">
-                <p class="shift__element paragraph-green">cos<sup>-1</sup>(</p>
-                <p class="sectionsidebar__div1-p section__p">cos(</p>
-            </div>
-            <div class="sectionsidebar__div2 sectionsidebar__div-initial">
-                <p class="shift__element paragraph-green">sin<sup>-1</sup>(</p>
-                <p class="sectionsidebar__div2-p section__p">sin(</p>
-            </div>
-            <div class="sectionsidebar__div3 sectionsidebar__div-initial">
-                <p class="shift__element paragraph-green">tan<sup>-1</sup>(</p>
-                <p class="sectionsidebar__div3-p section__p">tan(</p>
-            </div>
-            <div class="sectionsidebar__div4 sectionsidebar__div-initial">
-                <p class="sectionsidebar__div4-p section__p">%</p>
-            </div>
-            <div class="sectionsidebar__div5 sectionsidebar__div-initial">
-                <p class="sectionsidebar__div3-p">)</p>
-            </div>
+    <section class="container">
+        <input type="text" class="display"/>
+        <div class="buttons">
+            <button data-value="AC" class="operator">AC</button>
+            <button data-value="Del" class="operator">Del</button>
+            <button data-value="%" class="operator">%</button>
+            <button data-value="/" class="operator">/</button>
+
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-value="*" class="operator">*</button>
+
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="-" class="operator">-</button>
+
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="+" class="operator">+</button>
+
+            <button data-value="0">0</button>
+            <button data-value=".">.</button>
+            <button data-value="00">00</button>
+            <button data-value="=" class="operator">=</button>
         </div>
     </section>
     <script src="sjc.js"></script>
